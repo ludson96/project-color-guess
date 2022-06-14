@@ -27,3 +27,5 @@ yarn-error.log*
 
 cypress/reports
 cypress/screenshots
+package-lock.json
+package-lock.json
