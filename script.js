@@ -1,6 +1,7 @@
 const ball = document.querySelectorAll('.ball');
 const rgb = document.getElementById('rgb-color');
-const select = document.getElementById('select');
+const select = document.getElementById('answer');
+const score = document.getElementById('score');
 
 // // Requisito 04 - gerar cor aleatória
 function generateColor() {
@@ -11,10 +12,41 @@ function generateColor() {
   return `rgb(${r}, ${g}, ${b})`;
 }
 
+for (let index = 0; index < ball.length; index += 1) {
+  ball[index].style.backgroundColor = generateColor();
+}
+
+function loadLocalStorage() {
+  localStorage.setItem('placar', score.innerHTML);
+}
+
+let pontos = 0;
+function placar() {
+  if (select.innerHTML === 'Acertou! Novas cores!') {
+    pontos += 3;
+    score.innerHTML = pontos;
+    loadLocalStorage();
+  }
+}
+
+function certo(event) {
+  if (event.target.style.backgroundColor === `rgb${rgb.innerText}`) {
+    select.innerText = 'Acertou! Novas cores!';
+  } else {
+    select.innerText = 'Errou! Tente novamente!';
+  }
+  placar();
+}
+
+for (let index = 0; index < ball.length; index += 1) {
+  ball[index].addEventListener('click', certo);
+}
+
 function colorSelected(cor) {
   rgb.innerHTML = cor;
 }
-window.onload = function cor() {
+
+function cor2() {
   const cores = [];
   for (let index = 0; index < ball.length; index += 1) {
     const corRGB = ball[index].style.backgroundColor;
@@ -22,16 +54,23 @@ window.onload = function cor() {
     cores[index] = nRGB;
   }
   colorSelected(cores[Math.floor(Math.random() * 6)]);
-};
+}
+cor2();
 
-function certo(event) {
-  if (event.target.style.backgroundColor === `rgb${rgb.innerText}`) {
-    select.innerText = 'Acertou! Novas cores!';
+// // Requisito 07
+function getLocalStorage() {
+  score.innerHTML = 0;
+  const load = localStorage.getItem('placar');
+  if (load) {
+    score.innerHTML = load;
   }
-  // console.log(event.target.style.backgroundColor);
 }
 
-for (let index = 0; index < ball.length; index += 1) {
-  ball[index].style.backgroundColor = generateColor();
-  ball[index].addEventListener('click', certo);
-}
+window.onload = getLocalStorage;
+
+// // 6 - botão para reiniciar
+const btn = document.getElementById('reset-game');
+
+btn.addEventListener('click', () => {
+  document.location.reload();
+});
