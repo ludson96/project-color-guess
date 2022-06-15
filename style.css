@@ -1,0 +1,11 @@
+.container {
+  display: flex;
+}
+
+.ball {
+  width: 70px;
+  height: 70px;
+  margin: 10px;
+  border-radius: 60%;
+  border: 2px solid black;
+}
