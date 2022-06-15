@@ -20,22 +20,23 @@ function loadLocalStorage() {
   localStorage.setItem('placar', score.innerHTML);
 }
 
-let pontos = 0;
-function placar() {
-  if (select.innerHTML === 'Acertou! Novas cores!') {
-    pontos += 3;
-    score.innerHTML = pontos;
-    loadLocalStorage();
-  }
-}
+// function placar() {
+//   if (select.innerHTML === 'Acertou! Novas cores!') {
+//     pontos += 3;
+//     loadLocalStorage();
+//   }
+// }
 
 function certo(event) {
+  let pontos = parseInt(score.innerText, 10);
   if (event.target.style.backgroundColor === `rgb${rgb.innerText}`) {
     select.innerText = 'Acertou! Novas cores!';
+    pontos += 3;
+    score.innerHTML = pontos;
   } else {
     select.innerText = 'Errou! Tente novamente!';
   }
-  placar();
+  loadLocalStorage();
 }
 
 for (let index = 0; index < ball.length; index += 1) {
