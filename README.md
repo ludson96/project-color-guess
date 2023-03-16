@@ -50,12 +50,6 @@ Nesta aplicação é possível jogar um jogo de adivinhação de cores onde:
     cd project-color-guess
     ```
 
-1. Instale as dependências:
-
-    ```bash
-    npm install
-    ```
-
 1. Abra o arquivo `index.html` no seu navegador, ou utilize a extensão [Live Server][Live Server].
 
 [Live Server]: https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer
