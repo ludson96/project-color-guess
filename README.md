@@ -1,10 +1,10 @@
-# Repositório do projeto de adivinhação de Cor
+# Repositório do projeto de adivinhação de Cor 🍀
 
-# :construction: Estilização em desenvolvimento ! :construction:
+# 🚧 Estilização em desenvolvimento ! 🚧
 
 ## Módulo: FUNDAMENTOS
 
- Repositório possuí projeto desenvolvido no período que estive na **Trybe**,  abordando sobre conceitos de estilização, manipulação do DOM com Javascript e reutilização de código.
+Repositório possuí projeto desenvolvido no período que estive na **Trybe**, abordando sobre conceitos de estilização, manipulação do DOM com Javascript , Web Storage e reutilização de código.
 
 ## Informações de aprendizados
 
