@@ -1,4 +1,4 @@
-# Repositório do projeto de adivinhação de Cor 🍀
+# Repositório do projeto de Adivinhação de Cor 🍀
 
 # 🚧 Estilização em desenvolvimento ! 🚧
 
